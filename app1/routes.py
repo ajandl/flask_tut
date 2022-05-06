@@ -1,10 +1,15 @@
-from app1 import app 
+from flask import render_template
+from app1 import app
 
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello World"
+    user = {'username': 'Adam2'}
+
+    ''' render template knows to look in the templates folder based on the
+    optional omitted parameter when creating the flask instance in __init__'''
+    return render_template('index.html', title='Home', user=user)
 
 
 @app.route('/data')
