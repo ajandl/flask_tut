@@ -14,13 +14,13 @@ def index():
         },
         {
             'author': {'username': 'User2'},
-            'body': 'User2 Post1'
+            'body': 'User2 Post2'
         }
     ]
 
     ''' render template knows to look in the templates folder based on the
     optional omitted parameter when creating the flask instance in __init__'''
-    return render_template('index.html', title='Home', user=user, posds=posts)
+    return render_template('index.html', title='Home', user=user, posts=posts)
 
 
 @app.route('/login', methods=['GET', 'POST'])
